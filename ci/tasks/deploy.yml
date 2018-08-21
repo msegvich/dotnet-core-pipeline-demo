@@ -6,6 +6,7 @@ image_resource:
     repository: busybox
 
 inputs:
+  - name: service-repo
   - name: build-output
 
 run:

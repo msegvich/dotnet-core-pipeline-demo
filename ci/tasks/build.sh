@@ -6,7 +6,7 @@ ls -l ../
 
 echo "starting build ..."
 
-dotnet publish -r ubuntu.14.04-x64 -c Release -o ./build-output
+dotnet publish -r ubuntu.14.04-x64 -c Release -o ../build-output
 
 # echo "copying files to ../build-output"
 # cp manifest.yml ../build-output
