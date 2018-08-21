@@ -1,5 +1,5 @@
 #!/bin/bash
-cd service-repo
+cd service-repo/pcf-ers-dotnetcore-demo
 
 echo I am in `pwd`
 ls -l ../
