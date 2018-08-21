@@ -9,8 +9,10 @@ resources:
 - name: service-repo
   type: git
   source:
-    uri: https://github.com/akoranne/dotnet-core-helloWorld.git
+    uri: https://github.com/msegvich/dotnet-core-pipeline-demo/dotnet-core-helloWorld.git
     branch: master
+    paths: 
+      - hello/**
 
 - name: deploy-dev-env
   type: cf
