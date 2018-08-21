@@ -37,4 +37,4 @@ jobs:
   - put: deploy-dev-env
     params:
       manifest: service-repo/pcf-ers-dotnetcore-demo/manifest.yml
-      path: service-repo/pcf-ers-dotnetcore-demo/build-output
+      path: build-output

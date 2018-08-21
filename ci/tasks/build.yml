@@ -7,6 +7,8 @@ image_resource:
 
 inputs:
   - name: service-repo
+outputs: 
+  - name: build-output
 
 run:
   path: sh
