@@ -37,4 +37,4 @@ jobs:
   - put: deploy-dev-env
     params:
       manifest: service-repo/pcf-ers-dotnetcore-demo/manifest.yml
-      path: service-repo/pcf-ers-dotnetcore-demo
+      path: service-repo/pcf-ers-dotnetcore-demo/bin/Release/netcoreapp2.1/ubuntu.14.04-x64/publish
