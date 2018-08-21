@@ -34,7 +34,9 @@ jobs:
     params: {submodules: [pcf-ers-dotnetcore-demo/**, ci/**]}
   - task: build-and-pkg
     file: service-repo/ci/tasks/build.yml
-  - put: deploy-dev-env
-    params:
-      manifest: service-repo/pcf-ers-dotnetcore-demo/manifest.yml
-      path: build-output
+  - task: deploy
+    file: service-repo/ci/tasks/deploy.yml
+  # - put: deploy-dev-env
+  #   params:
+  #     manifest: service-repo/pcf-ers-dotnetcore-demo/manifest.yml
+  #     path: build-output
