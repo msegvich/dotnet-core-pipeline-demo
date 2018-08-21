@@ -1,3 +1,5 @@
 bin/*
 obj/*
 dotnet-core-helloWorld.userprefs
+pipeline-params.yml
+.vscode
