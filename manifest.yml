@@ -1,5 +1,0 @@
----
-applications:
-  - name: dotnet-core-demo
-    random-route: true
-    buildpack: dotnet_core_buildpack
