@@ -1,7 +1,7 @@
-# pipeline for dotnet-core-helloWorld app.
+# pipeline for pcf-ers-dotnetcore-demo app.
 
 groups:
-- name: dotnet-core-hello-world
+- name: pcf-ers-dotnetcore
   jobs:
   - build-service
 
@@ -9,10 +9,10 @@ resources:
 - name: service-repo
   type: git
   source:
-    uri: https://github.com/msegvich/dotnet-core-pipeline-demo/dotnet-core-helloWorld.git
+    uri: https://github.com/msegvich/dotnet-core-pipeline-demo.git
     branch: master
     paths: 
-      - hello/**
+      - pcf-ers-dotnetcore-demo
 
 - name: deploy-dev-env
   type: cf
@@ -20,7 +20,7 @@ resources:
     api:             ((pws-api))
     username:        ((deploy-username))
     password:        ((deploy-password))
-    skip_cert_check: true
+    skip_cert_check: false
     organization:    ((pws-organization))
     space:           ((pws-staging-space))
 
@@ -31,8 +31,10 @@ jobs:
   plan:
   - get: service-repo
     trigger: true
+    params: {submodules: [pcf-ers-dotnetcore-demo/**, ci/**]}
   - task: build-and-pkg
     file: service-repo/ci/tasks/build.yml
   - put: deploy-dev-env
     params:
-      manifest: service-repo/manifest.yml
+      manifest: service-repo/pcf-ers-dotnetcore-demo/manifest.yml
+      path: bin/Debug/netcoreapp2.0/ubuntu.14.04-x64/publish
