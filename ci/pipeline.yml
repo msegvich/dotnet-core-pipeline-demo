@@ -14,15 +14,15 @@ resources:
     paths: 
       - pcf-ers-dotnetcore-demo
 
-- name: deploy-dev-env
-  type: cf
-  source:
-    api:             ((pws-api))
-    username:        ((deploy-username))
-    password:        ((deploy-password))
-    skip_cert_check: false
-    organization:    ((pws-organization))
-    space:           ((pws-staging-space))
+# - name: deploy-dev-env
+#   type: cf
+#   source:
+#     api:             ((pws-api))
+#     username:        ((deploy-username))
+#     password:        ((deploy-password))
+#     skip_cert_check: false
+#     organization:    ((pws-organization))
+#     space:           ((pws-staging-space))
 
 jobs:
 - name: build-service
