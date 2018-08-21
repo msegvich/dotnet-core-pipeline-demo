@@ -8,9 +8,6 @@ image_resource:
 inputs:
   - name: service-repo
 
-outputs:
-  - name: build-output
-
 run:
   path: sh
   args: ["service-repo/ci/tasks/build.sh"]
