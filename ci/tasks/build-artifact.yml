@@ -16,7 +16,7 @@ outputs:
   - name: artifact-dir
 
 run:
-  path: git-repo/ci/scripts/build-artifact.sh
+  path: git-repo/ci/tasks/build-artifact.sh
 
 params:
   base_name:
