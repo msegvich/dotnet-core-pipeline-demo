@@ -95,6 +95,11 @@ jobs:
         tag: version/number
     - put: version
       params: {file: version/number}
+    - put: deploy-test-app
+      params:
+        manifest: expanded-artifact-dir/manifest.yml
+        current_app_name: dotnet-demo-test
+        path: expanded-artifact-dir
 
   - name: integration-tests
     serial_groups: [version]
