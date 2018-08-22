@@ -18,7 +18,7 @@ echo "starting build ..."
 dotnet publish -r ubuntu.14.04-x64 -c Release -o ./build-output
 cp manifest.yml ./build-output
 
-cp ./build-output ../../expanded-artifact-dir
+cp -r ./build-output/* ../../expanded-artifact-dir
 echo "In expanded-artifact-dir"
 ls ../../expanded-artifact-dir
 
