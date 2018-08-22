@@ -16,25 +16,25 @@ resources:
     space: {{CF_TEST_SPACE}}
     skip_cert_check: ((skip-cert))
 
-- name: deploy-uat-app
-  type: cf
-  source:
-    api: {{CF_API}}
-    username: {{CF_USER}}
-    password: {{CF_PASS}}
-    organization: {{CF_UAT_ORG}}
-    space: {{CF_UAT_SPACE}}
-    skip_cert_check: ((skip-cert))
+# - name: deploy-uat-app
+#   type: cf
+#   source:
+#     api: {{CF_API}}
+#     username: {{CF_USER}}
+#     password: {{CF_PASS}}
+#     organization: {{CF_UAT_ORG}}
+#     space: {{CF_UAT_SPACE}}
+#     skip_cert_check: ((skip-cert))
 
-- name: deploy-production-app
-  type: cf
-  source:
-    api: {{CF_API}}
-    username: {{CF_USER}}
-    password: {{CF_PASS}}
-    organization: {{CF_PROD_ORG}}
-    space: {{CF_PROD_SPACE}}
-    skip_cert_check: ((skip-cert))
+# - name: deploy-production-app
+#   type: cf
+#   source:
+#     api: {{CF_API}}
+#     username: {{CF_USER}}
+#     password: {{CF_PASS}}
+#     organization: {{CF_PROD_ORG}}
+#     space: {{CF_PROD_SPACE}}
+#     skip_cert_check: ((skip-cert))
 
 - name: version
   type: semver
@@ -53,12 +53,12 @@ resources:
     repository: {{GIT_RELEASE_REPO}}
     access_token: {{GIT_ACCESS_TOKEN}}
 
-- name: production-release
-  type: github-release
-  source:
-    owner: {{GIT_USER}}
-    repository: {{GIT_RELEASE_REPO}}
-    access_token: {{GIT_ACCESS_TOKEN}}
+# - name: production-release
+#   type: github-release
+#   source:
+#     owner: {{GIT_USER}}
+#     repository: {{GIT_RELEASE_REPO}}
+#     access_token: {{GIT_ACCESS_TOKEN}}
 
 jobs:
 #   - name: unit-tests
