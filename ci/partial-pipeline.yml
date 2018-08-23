@@ -56,7 +56,7 @@ jobs:
       params: { pre: rc }
     - task: build-artifact
       file: git-repo/ci/tasks/build-artifact.yml
-      timeout: 5m
+      timeout: 8m
       params:
         base_name: dotnet-demo
     - put: release-candidate
@@ -78,7 +78,7 @@ jobs:
         current_app_name: dotnet-demo-test
         path: expanded-artifact-dir
 
-  - name: uat-testing
+  - name: integration-testing
     serial_groups: [version]
     plan:
     - aggregate:
@@ -90,14 +90,14 @@ jobs:
         passed: [build-artifact]
     - task: extract-artifact
       file: git-repo/ci/tasks/extract-artifact.yml
-      timeout: 5m
+      timeout: 8m
       params:
         base_name: dotnet-demo
     - put: deploy-uat-app
       params:
-        manifest: expanded-artifact-dir/manifest.yml
+        manifest: expanded-artifact-dir/build-output/manifest.yml
         current_app_name: dotnet-demo-uat
-        path: expanded-artifact-dir
+        path: expanded-artifact-dir/build-output
     #   params:
     #     manifest: git-repo/manifest-test.yml
     #     current_app_name: dotnet-demo-test

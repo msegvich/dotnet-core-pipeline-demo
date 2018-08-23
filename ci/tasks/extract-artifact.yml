@@ -11,6 +11,7 @@ image_resource:
 inputs:
   - name: release-candidate
   - name: version
+  - name: git-repo
 
 outputs:
   - name: artifact-dir
@@ -18,7 +19,7 @@ outputs:
 
 run:
   path: sh
-  args: ["release-candidate/ci/tasks/extract-artifact.sh"]
+  args: ["git-repo/ci/tasks/extract-artifact.sh"]
 
 params:
   base_name:
